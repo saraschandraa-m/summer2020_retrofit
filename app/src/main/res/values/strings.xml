@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Retrofit</string>
+
+    <string-array name="news_categories">
+        <item>business</item>
+        <item>entertainment</item>
+        <item>sports</item>
+        <item>health</item>
+        <item>science</item>
+        <item>technology</item>
+    </string-array>
 </resources>

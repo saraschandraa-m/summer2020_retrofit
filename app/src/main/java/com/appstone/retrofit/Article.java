@@ -1,5 +1,7 @@
 package com.appstone.retrofit;
 
+import com.google.gson.annotations.SerializedName;
+
 import org.json.JSONObject;
 
 public class Article {
@@ -8,12 +10,14 @@ public class Article {
     public String title;
     public String description;
     public String url;
+    @SerializedName("urlToImage")
     public String urlToImage;
     public String publishedAt;
     public String content;
 
+    @SerializedName("source")
     public Source source;
-    public DummyClass dummyClass;
+//    public DummyClass dummyClass;
 
 
     public static Article parseJSONObject(JSONObject jsonObject) {
@@ -35,11 +39,6 @@ public class Article {
 //        item.source = source;
 
         item.source = Source.parseSourceJSON(sourceObject);
-
-
-        JSONObject dummyObject = jsonObject.optJSONObject("dummyobject");
-
-        item.dummyClass = DummyClass.parseJSON(dummyObject);
 
         return item;
     }
