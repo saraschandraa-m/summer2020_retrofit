@@ -7,14 +7,23 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:onClick="onGetNewsClicked"
-        android:text="Get News"
-        android:visibility="gone" />
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tl_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <Spinner
+            android:id="@+id/spn_countries"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="end" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,8 +50,15 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_news_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_news"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>
